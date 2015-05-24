@@ -1,7 +1,0 @@
-name             'logstash'
-maintainer       'Nick Ramirez'
-maintainer_email 'nickram44@gmail.com'
-license          'all_rights'
-description      'Installs/Configures logstash'
-long_description 'Installs/Configures logstash'
-version          '0.1.0'

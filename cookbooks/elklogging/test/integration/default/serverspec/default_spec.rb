@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'logstash::default' do
+describe 'elklogging::default' do
 
   # Serverspec examples can be found at
   # http://serverspec.org/resource_types.html
