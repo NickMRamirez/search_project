@@ -4,4 +4,4 @@ cookbook 'apt'
 cookbook 'java'
 cookbook 'redisio' # redis cookbook
 
-cookbook 'elklogging', path: 'cookbooks/elklogging'
+cookbook 'elklogging', git: 'https://github.com/NickMRamirez/elklogging-cookbook.git'
