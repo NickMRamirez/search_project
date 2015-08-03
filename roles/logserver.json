@@ -1,0 +1,6 @@
+{
+  "name" : "logserver",
+  "description" : "Installs logstash, elasticsearch and redis",
+
+  "run_list" : ["recipe[redisio]", "recipe[redisio::enable]", "recipe[elklogging::default]"]
+}
