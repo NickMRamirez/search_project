@@ -4,7 +4,7 @@
 Vagrant.configure(2) do |config|
   
   config.vm.define 'logserver' do |node|
-    node.vm.box = 'chef/ubuntu-14.10' # Ubuntu 14.10
+    node.vm.box = 'ubuntu/vivid64'
 	  node.vm.hostname = 'logserver'
 	  node.vm.network 'private_network', ip: '172.28.128.3'
 	
