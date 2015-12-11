@@ -34,8 +34,21 @@ Usage
 redis> SET logstash:mykey myvalue
 ``` 
 
+1. Open a browser on your host machine and go to any of the following URLs:
 
+* elasticsearch listens on port 9200 -  http://172.28.128.3:9200
+* You can see indexes via: http://172.28.128.3:9200/_cat/indices?v
+* When you SSH into the machine and push something into redis, such as:
 
-and find its IP address. Then, connect to it on port 6379 where 
-Redis is listening. Logstash will be monitoring any items put into Redis. When it detects
-one, it will transfer it for you into elasticsearch. Elasticsearch can be accessed on port 9200.
+```
+> redis-cli
+127.0.0.1:6379> LPUSH logstash "my value"
+```
+
+The value will be transferred, by logstash, to elasticsearch. You can then see it via
+a URL like the following (where logstash-2015.12.11:
+
+http://172.28.128.3:9200/_search?q=redis-input
+
+* Kibana listens on port 5601
+* Redis listens on port 6379, so you can connect to it if you have a [redis client](https://github.com/MSOpenTech/redis/releases) locally
