@@ -30,13 +30,18 @@ Usage
 
 ```
 > redis-cli
+127.0.0.1:6379> LPUSH logstash "my value"
+```
 
-redis> SET logstash:mykey myvalue
-``` 
+Or, even better, send a string of JSON:
+
+```
+127.0.0.1:6379> LPUSH logstash '{ "errormsg" : "My message!", "date" : "2015-12-12" }'
+```
 
 1. Open a browser on your host machine and go to any of the following URLs:
 
-* elasticsearch listens on port 9200 -  http://172.28.128.3:9200
+* elasticsearch listens on port 9200 -  http://172.28.128.3:9200/_search/?q=redis-input
 * You can see indexes via: http://172.28.128.3:9200/_cat/indices?v
 * When you SSH into the machine and push something into redis, such as:
 
@@ -50,5 +55,5 @@ a URL like the following (where logstash-2015.12.11:
 
 http://172.28.128.3:9200/_search?q=redis-input
 
-* Kibana listens on port 5601
+* Kibana listens on port 5601 - http://172.28.128.3:5601
 * Redis listens on port 6379, so you can connect to it if you have a [redis client](https://github.com/MSOpenTech/redis/releases) locally
