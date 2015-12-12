@@ -51,7 +51,7 @@ Or, even better, send a string of JSON:
 ```
 
 The value will be transferred, by logstash, to elasticsearch. You can then see it via
-a URL like the following (where logstash-2015.12.11:
+a URL like the following:
 
 http://172.28.128.3:9200/_search?q=redis-input
 
